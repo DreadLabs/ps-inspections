@@ -19,3 +19,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && chmod +x /usr/bin/phpcs.phar \
     && curl -o /usr/bin/phpmd.phar -L http://static.phpmd.org/php/${PHPMD_VERSION}/phpmd.phar \
     && chmod +x /usr/bin/phpmd.phar
+    && curl -o /usr/bin/php-cs-fixer.phar -L https://cs.symfony.com/download/php-cs-fixer-v2.phar \
+    && chmod +x /usr/bin/php-cs-fixer.phar
