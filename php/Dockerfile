@@ -3,7 +3,7 @@ FROM debian:8
 MAINTAINER Thomas Juhnke <dev@van-tomas.de>
 
 ENV CODESNIFFER_VERSION 2.8.1
-ENV PHPMD_VERSION 2.6.0
+ENV PHPMD_VERSION 2.6.1
 ENV PHPCSFIXER_VERSION v2.16.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && rm -rf /var/lib/apt \
     && curl -o /usr/bin/phpcs.phar -L https://github.com/squizlabs/PHP_CodeSniffer/releases/download/${CODESNIFFER_VERSION}/phpcs.phar \
     && chmod +x /usr/bin/phpcs.phar \
-    && curl -o /usr/bin/phpmd.phar -L http://static.phpmd.org/php/${PHPMD_VERSION}/phpmd.phar \
+    && curl -o /usr/bin/phpmd.phar -L https://phpmd.org/static/${PHPMD_VERSION}/phpmd.phar \
     && chmod +x /usr/bin/phpmd.phar \
     && curl -o /usr/bin/php-cs-fixer.phar -L https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/${PHPCSFIXER_VERSION}/php-cs-fixer.phar \
     && chmod +x /usr/bin/php-cs-fixer.phar
